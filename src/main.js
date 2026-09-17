@@ -32,7 +32,10 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
  * ========================================================================== */
 
 const CONFIG = {
-  modelUrl: "/models/2GALERIADUPLACHACKRAS.glb",
+  // Relative path (no leading slash) so this resolves correctly whether the
+  // site is served from a domain root, a subfolder, or from within a
+  // third-party platform's own hosting path.
+  modelUrl: "models/2GALERIADUPLACHACKRAS.glb",
 
   // Human eye height in meters. Assumes the GLB was exported from Blender
   // using meters as the unit scale (Blender's default). If the gallery feels
