@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BUDA STUDIO — CONNECTING WORLDS</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Three.js canvas target -->
+    <canvas id="scene"></canvas>
+
+    <!-- Minimal UI overlay -->
+    <div id="ui">
+      <div id="brand">
+        <div id="brand-title">BUDA STUDIO</div>
+        <div id="brand-subtitle">CONNECTING WORLDS</div>
+      </div>
+
+      <div id="controls-hint">
+        CLICK TO ENTER<br />
+        WASD — MOVE<br />
+        MOUSE — LOOK<br />
+        SHIFT — RUN<br />
+        ESC — RELEASE
+      </div>
+
+      <!-- Discreet debug readout, provisional, see main.js -->
+      <div id="debug" hidden>
+        <div id="debug-meshes">MESHES: —</div>
+        <div id="debug-triangles">TRIANGLES: —</div>
+        <div id="debug-size">SIZE: —</div>
+      </div>
+    </div>
+
+    <!-- Crosshair, shown only while pointer is locked -->
+    <div id="crosshair" hidden></div>
+
+    <!-- Loading overlay -->
+    <div id="loading-screen">
+      <div id="loading-title">LOADING GALLERY</div>
+      <div id="loading-percent">0%</div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

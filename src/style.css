@@ -1,0 +1,165 @@
+/* ==========================================================================
+   BUDA STUDIO — CONNECTING WORLDS
+   Minimal, dark, contemporary-gallery styling.
+   No game-like HUD. No decorative clutter.
+   ========================================================================== */
+
+:root {
+  --bg: #050505;
+  --fg: #f2f2f2;
+  --fg-muted: rgba(242, 242, 242, 0.55);
+  --accent: rgba(242, 242, 242, 0.9);
+  --ui-font: "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--ui-font);
+  overflow: hidden;
+}
+
+#scene {
+  position: fixed;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+
+/* -------------------------------------------------------------------------
+   UI overlay
+   ------------------------------------------------------------------------- */
+
+#ui {
+  position: fixed;
+  inset: 0;
+  pointer-events: none; /* click-through to the canvas */
+  z-index: 10;
+}
+
+#brand {
+  position: absolute;
+  top: 28px;
+  left: 32px;
+  line-height: 1.3;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+#brand-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg);
+}
+
+#brand-subtitle {
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--fg-muted);
+}
+
+#controls-hint {
+  position: absolute;
+  bottom: 28px;
+  left: 32px;
+  font-size: 11px;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  user-select: none;
+  transition: opacity 0.4s ease;
+}
+
+/* Hidden once the user is inside the experience (pointer locked) */
+body.locked #controls-hint {
+  opacity: 0;
+}
+
+body.locked #brand {
+  opacity: 0.55;
+  transition: opacity 0.4s ease;
+}
+
+/* -------------------------------------------------------------------------
+   Debug readout — provisional, minimal, unobtrusive
+   ------------------------------------------------------------------------- */
+
+#debug {
+  position: absolute;
+  top: 28px;
+  right: 32px;
+  font-size: 10px;
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  text-align: right;
+  user-select: none;
+}
+
+/* -------------------------------------------------------------------------
+   Crosshair
+   ------------------------------------------------------------------------- */
+
+#crosshair {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 11;
+}
+
+/* -------------------------------------------------------------------------
+   Loading screen
+   ------------------------------------------------------------------------- */
+
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: var(--bg);
+  transition: opacity 0.8s ease;
+}
+
+#loading-screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#loading-title {
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+#loading-percent {
+  font-size: 22px;
+  font-weight: 200;
+  letter-spacing: 0.05em;
+  color: var(--fg);
+}
